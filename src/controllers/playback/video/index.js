@@ -1616,7 +1616,8 @@ import { appRouter } from '../../../components/appRouter';
         });
         view.querySelector('.btnAudio').addEventListener('click', showAudioTrackSelection);
         view.querySelector('.btnSubtitles').addEventListener('click', showSubtitleTrackSelection);
-        view.querySelector('.btnSkipIntro').addEventListener('click', skipIntro) {
+        view.querySelector('.btnSkipIntro').addEventListener('click', function () {
+            skipIntro
             event.stopPropagation();
         });
 
