@@ -1616,7 +1616,9 @@ import { appRouter } from '../../../components/appRouter';
         });
         view.querySelector('.btnAudio').addEventListener('click', showAudioTrackSelection);
         view.querySelector('.btnSubtitles').addEventListener('click', showSubtitleTrackSelection);
-        view.querySelector('.btnSkipIntro').addEventListener('click', skipIntro);
+        view.querySelector('.btnSkipIntro').addEventListener('click', skipIntro) {
+            event.stopPropagation();
+        });
 
         // Register to SyncPlay playback events and show big animated icon
         const showIcon = (action) => {
