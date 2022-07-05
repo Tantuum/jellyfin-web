@@ -484,6 +484,7 @@ import { appRouter } from '../../../components/appRouter';
         }
 
         function skipIntro(e) {
+            event.stopPropagation();
             playbackManager.seekMs(tvIntro.IntroEnd * 1000);
         }
 
@@ -1616,10 +1617,7 @@ import { appRouter } from '../../../components/appRouter';
         });
         view.querySelector('.btnAudio').addEventListener('click', showAudioTrackSelection);
         view.querySelector('.btnSubtitles').addEventListener('click', showSubtitleTrackSelection);
-        view.querySelector('.btnSkipIntro').addEventListener('click', function () {
-            skipIntro
-            event.stopPropagation();
-        });
+        view.querySelector('.btnSkipIntro').addEventListener('click', skipIntro);
 
         // Register to SyncPlay playback events and show big animated icon
         const showIcon = (action) => {
