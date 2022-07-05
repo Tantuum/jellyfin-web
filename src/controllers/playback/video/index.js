@@ -485,7 +485,6 @@ import { appRouter } from '../../../components/appRouter';
 
         function skipIntro(e) {
             playbackManager.seekMs(tvIntro.IntroEnd * 1000);
-            playbackManager.unpause(currentPlayer);
         }
 
         function onPlayPauseStateChanged() {
@@ -1081,6 +1080,7 @@ import { appRouter } from '../../../components/appRouter';
 
             if (e.keyCode === 32) {
                 if (e.target.tagName !== 'BUTTON' || !layoutManager.tv) {
+                    playbackManager.playPause(currentPlayer);
                     e.preventDefault();
                     e.stopPropagation();
                     // Trick Firefox with a null element to skip next click
